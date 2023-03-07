@@ -154,5 +154,27 @@ namespace MoviesAndFilmWebApp.Controllers
         {
           return _context.Movies.Any(e => e.Id == id);
         }
+
+        [HttpPost]
+        public async Task<IActionResult> Index(string searchString)
+        {
+            if (_context.Movies == null)
+            {
+                return Problem("No Results Found");
+            }
+
+            var movies = from m in _context.Movies
+                         select m;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                movies = movies.Where(s => s.Title!.Contains(searchString) 
+                || s.Genre!.Contains(searchString) || s.Stars!.Contains(searchString)
+                || s.Director!.Contains(searchString) || s.Writer!.Contains(searchString)
+                || s.ReleaseYear!.Contains(searchString));
+            }
+
+            return View(await movies.ToListAsync());
+        }
     }
 }
