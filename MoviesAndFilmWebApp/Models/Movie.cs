@@ -23,8 +23,11 @@ namespace MoviesAndFilmWebApp.Models
         [Required]
         public string Plot { get; set; }
 
+        //public MPAARatingCategory MPAA { get; set; }
         public string MPAARating { get; set; }
+        //do props for hours and minutes
         public string RunTime { get; set; }
+        //make int and add a range of whenever movies started and like 2023
         public string ReleaseYear { get; set; }
     }
 }

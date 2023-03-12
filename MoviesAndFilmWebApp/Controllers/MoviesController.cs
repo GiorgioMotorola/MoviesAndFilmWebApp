@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MoviesAndFilmWebApp.Data;
+using MoviesAndFilmWebApp.Enums;
 using MoviesAndFilmWebApp.Models;
 
 namespace MoviesAndFilmWebApp.Controllers
@@ -17,9 +18,10 @@ namespace MoviesAndFilmWebApp.Controllers
         public MoviesController(AppDbContext context)
         {
             _context = context;
+           
         }
 
-        
+
         public async Task<IActionResult> Index()
         {
               return View(await _context.Movies.ToListAsync());

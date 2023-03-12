@@ -2,7 +2,7 @@
 
 namespace MoviesAndFilmWebApp.Enums
 {
-    enum MPAARatingCategory
+    public enum MPAARatingCategory
     {
         [Display(Name = "G")]
         G,
