@@ -256,7 +256,7 @@ namespace MoviesAndFilmWebApp.Data
 
                         new Movie()
                         {
-                            Title = "Do the Right Thing",
+                            Title = "Do The Right Thing",
                             Stars = "Danny Aiello, Ossie Davis, Ruby Dee",
                             Director = "Spike Lee",
                             Writer = "Spike Lee",
